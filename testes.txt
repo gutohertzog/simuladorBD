@@ -1,0 +1,11 @@
+
+
+
+
+
+
+insert into funcionario values (6, Chu, 1234);
+
+update funcionario set nome = Augusto where id = 1;
+
+delete from funcionario where id = 4;
