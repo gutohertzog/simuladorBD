@@ -1,0 +1,9 @@
+# Arquivos #
+############
+# arquivos para não serem comitados
+*.pyc
+
+# Pastas geradas pelo sistema #
+###############################
+.vscode
+__pycache__

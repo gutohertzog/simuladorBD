@@ -10,7 +10,7 @@ def instrucoes():
 ser implementadas.")
     print("O programa funciona de maneira similar os SQLite, base que serviu de inspiração \
 para este software.")
-    print("Abaixo listatei o que está funcionando e o que ainda está em desenvolvimento:")
+    print("Abaixo listarei o que está funcionando e o que ainda está em desenvolvimento:")
     print("\nFuncionais:")
     print("\t1. Create table")
     print("\t2. Drop table")

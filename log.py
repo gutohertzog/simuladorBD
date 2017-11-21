@@ -40,16 +40,16 @@ def formata_log_update(lista_query, valor_velho):
     formatado.append(lista_query[0])  # nome da transação
     formatado.append(lista_query[1])  # nome da tabela
     formatado.append(lista_query[3])  # nome da coluna_valor
-    if lista_query[5].isdigit():
+    if str(lista_query[5]).isdigit():
         formatado.append(int(lista_query[5]))  # valor a ser alterado em coluna_valor
     else:
         formatado.append(lista_query[5])  # valor a ser alterado em coluna_valor
     formatado.append(lista_query[7])  # nome da coluna_chave
-    if lista_query[9].isdigit():
+    if str(lista_query[9]).isdigit():
         formatado.append(int(lista_query[9]))  # valor_chave a ser buscado em coluna_valor
     else:
         formatado.append(lista_query[9])  # valor_chave a ser buscado em coluna_valor
-    if valor_velho.isdigit():
+    if str(valor_velho).isdigit():
         formatado.append(int(valor_velho))  # valor antigo do update
     else:
         formatado.append(valor_velho)  # valor antigo do update

@@ -39,7 +39,7 @@ def inicia_sql():
         temp.append(v.ATUAL)
         v.LOG.append(temp)
         v.ULTIMA = v.ATUAL
-    print("Tabelas")
+    print("\nTabelas")
     print(v.TABELAS)
     print("Log")
     print(v.LOG)
