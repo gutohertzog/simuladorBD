@@ -2,6 +2,7 @@
 
 import json
 import sql as sql
+import salva as save
 import variaveis as v
 
 
@@ -63,15 +64,15 @@ def separa():
             # pass
         # 4.2. marcando na lista-REDO as transações Ti cujos registros <Início Ti> estão
         # sendo encontrados nessa varredura
-        elif item[0] == 'start':
-            if int(item[1]) not in lista_undo:
-                if int(item[1]) not in lista_redo:
-                    lista_redo.append(item[1])
-                    print("\nAdicionando em lista REDO na segunda varredura.")
-                    print("lista redo {}".format(lista_redo))
-                    input("Press ENTER to continue...")
+        # elif item[0] == 'start':
+        #     if int(item[1]) not in lista_undo:
+        #         if int(item[1]) not in lista_redo:
+        #             lista_redo.append(item[1])
+        #             print("\nAdicionando em lista REDO na segunda varredura.")
+        #             print("lista redo {}".format(lista_redo))
+        #             input("Press ENTER to continue...")
 
-    # 6. Percorre o arquivo de LOG para a frente, realizando REDO(Ti) para todas as transações
+    # 5. Percorre o arquivo de LOG para a frente, realizando REDO(Ti) para todas as transações
     # existentes na lista-REDO.
     for item in log:
         if item[0] in lista_redo:
@@ -85,6 +86,7 @@ def separa():
             # pass
     # print("lista undo {}".format(lista_undo))
     # print("lista redo {}".format(lista_redo))
+    save.checkpoint(v.TABELAS, v.LOG)
     input("\nFINAL DA OPERAÇÃO DE RECOVER!!\nPress ENTER to continue...\n")
 
 
