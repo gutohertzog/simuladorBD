@@ -4,87 +4,130 @@
         "coluna_tipo": [
             "int",
             "varchar",
+            "varchar",
             "int"
         ],
         "coluna_nome": [
             "id",
             "nome",
+            "sobrenome",
             "salario"
         ],
         "dados": [
             [
                 1,
-                "Caixa",
-                123213
+                "Augusto",
+                "Hertzog",
+                5000
             ],
             [
                 2,
-                "Augusto",
-                12345
+                "Maria",
+                "Clara",
+                100
             ],
             [
                 3,
-                "Gutinho",
-                1214876
+                "Joao",
+                "Pedro",
+                10000
             ],
             [
                 4,
-                "Darios",
-                99999
+                "Doroteia",
+                "Joaquina",
+                0
             ],
             [
                 5,
-                "Bud",
-                1000000
+                "Faustao",
+                "Fausto",
+                0
             ],
             [
-                9,
-                "Mozo",
-                6666
+                6,
+                "Bruce",
+                "Wayne",
+                600
             ],
             [
-                66,
-                "devil",
-                12123
-            ],
-            [
-                300,
-                "meme",
-                60000
-            ],
-            [
-                666,
-                "vitoria",
-                100000
+                7,
+                "Clark",
+                "Kent",
+                15000
             ]
         ]
     },
     {
-        "nome_tabela": "departamento",
+        "nome_tabela": "animais",
         "coluna_tipo": [
             "int",
-            "varchar"
+            "varchar",
+            "int"
         ],
         "coluna_nome": [
             "id",
-            "nome"
-        ],
-        "dados": []
-    },
-    {
-        "nome_tabela": "cao",
-        "coluna_tipo": [
-            "int",
-            "varchar"
-        ],
-        "coluna_nome": [
-            "id",
-            "raca"
+            "nome",
+            "idade"
         ],
         "dados": [
             [
                 1,
-                "lhasa"
+                "Chu",
+                5
+            ],
+            [
+                2,
+                "Mozo",
+                4
+            ],
+            [
+                3,
+                "Bud",
+                1
+            ],
+            [
+                4,
+                "Miranda",
+                1
+            ],
+            [
+                5,
+                "Lulu",
+                9
+            ]
+        ]
+    },
+    {
+        "nome_tabela": "series",
+        "coluna_tipo": [
+            "varchar",
+            "int"
+        ],
+        "coluna_nome": [
+            "nome",
+            "temporadas"
+        ],
+        "dados": [
+            [
+                "Batman",
+                4
+            ],
+            [
+                "Friends",
+                6
+            ],
+            [
+                "Superman",
+                0
+            ],
+            [
+                "Supernatural",
+                12
+            ],
+            [
+                "WalkingDead",
+                8
             ]
         ]
     }

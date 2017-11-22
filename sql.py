@@ -39,7 +39,7 @@ def inicia_sql():
         temp.append(v.ATUAL)
         v.LOG.append(temp)
         v.ULTIMA = v.ATUAL
-    print("Tabelas")
+    print("\nTabelas")
     print(v.TABELAS)
     print("Log")
     print(v.LOG)
@@ -112,54 +112,55 @@ def distribui_query(query):
 
     print(lista_query)
 
-    if lista_query[0].upper() == v.SALVA[0]:
-        temp = []
-        lis = []
-        lis = v.TRANSACOES_ABERTAS
-        temp.append('checkpoint')
-        temp.append(lis)
-        v.LOG.append(temp)
-        save.checkpoint(v.TABELAS, v.LOG)
-    elif lista_query[0].upper() == v.SALVA[1]:
-        temp = []
-        temp.append('end')
-        temp.append(int(v.ATUAL))
-        v.LOG.append(temp)
-        save.commit(v.LOG)
-        # verifica se há apenas uma transação aberta
-        if len(v.TRANSACOES_ABERTAS) == 1:
-            prox = 0
-            prox = v.ULTIMA + 1
-            v.ULTIMA = prox
-            v.TRANSACOES_ABERTAS.append(prox)
+    if lista_query:
+        if lista_query[0].upper() == v.SALVA[0]:
             temp = []
-            temp.append('start')
-            temp.append(prox)
+            lis = []
+            lis = v.TRANSACOES_ABERTAS
+            temp.append('checkpoint')
+            temp.append(lis)
             v.LOG.append(temp)
-        # remove de acordo com o valor
-        v.TRANSACOES_ABERTAS.remove(int(v.ATUAL))
-        v.ATUAL = v.TRANSACOES_ABERTAS[0]
-    # manipula as transações
-    elif lista_query[0] == 'start':
-        # abre uma nova transação
-        if lista_query[1] == 'new':
-            v.ATUAL = v.ULTIMA + 1
-            v.ULTIMA = v.ATUAL
-            v.TRANSACOES_ABERTAS.append(v.ATUAL)
+            save.checkpoint(v.TABELAS, v.LOG)
+        elif lista_query[0].upper() == v.SALVA[1]:
             temp = []
-            temp.append('start')
-            temp.append(v.ATUAL)
+            temp.append('end')
+            temp.append(int(v.ATUAL))
             v.LOG.append(temp)
-        # abre uma transação já aberta
-        elif lista_query[1].isdigit():
-            if int(lista_query[1]) in v.TRANSACOES_ABERTAS:
-                v.ATUAL = int(lista_query[1])
-            else:
-                print("Transação não existe.")
-    elif lista_query[0] == 'recover':
-        r.separa()
-    else:
-        manda_query(lista_query)
+            save.commit(v.LOG)
+            # verifica se há apenas uma transação aberta
+            if len(v.TRANSACOES_ABERTAS) == 1:
+                prox = 0
+                prox = v.ULTIMA + 1
+                v.ULTIMA = prox
+                v.TRANSACOES_ABERTAS.append(prox)
+                temp = []
+                temp.append('start')
+                temp.append(prox)
+                v.LOG.append(temp)
+            # remove de acordo com o valor
+            v.TRANSACOES_ABERTAS.remove(int(v.ATUAL))
+            v.ATUAL = v.TRANSACOES_ABERTAS[0]
+        # manipula as transações
+        elif lista_query[0] == 'start':
+            # abre uma nova transação
+            if lista_query[1] == 'new':
+                v.ATUAL = v.ULTIMA + 1
+                v.ULTIMA = v.ATUAL
+                v.TRANSACOES_ABERTAS.append(v.ATUAL)
+                temp = []
+                temp.append('start')
+                temp.append(v.ATUAL)
+                v.LOG.append(temp)
+            # abre uma transação já aberta
+            elif lista_query[1].isdigit():
+                if int(lista_query[1]) in v.TRANSACOES_ABERTAS:
+                    v.ATUAL = int(lista_query[1])
+                else:
+                    print("Transação não existe.")
+        elif lista_query[0] == 'recover':
+            r.separa()
+        else:
+            manda_query(lista_query)
 
 
 def manda_query(lista_query):

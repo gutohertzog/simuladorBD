@@ -38,20 +38,13 @@ def atualiza(lista_query, tabelas):
             i_cha = item['coluna_nome'].index(coluna_chave)
             if item['coluna_tipo'][i_cha] == 'int':
                 chave = int(chave)
-            # pass
-            # trocar = []
-            for indice, dado in enumerate(item['dados']):
+            # for indice, dado in enumerate(item['dados']):
+            for dado in item['dados']:
                 if dado[i_cha] == chave:
-                    # trocar = dado
                     valor_velho = dado[i_val]
                     dado[i_val] = valor
-                    # ind_apagar = indice
-                    # del item['dados'][ind_apagar]
                     break
-            # print(indice)
-            # print("Entrou em ATUALIZAR!")
             break
-            # pass
     return tabelas, valor_velho
 
 
@@ -67,8 +60,6 @@ def valida_nomes(lista_query, tabelas):
     nome_coluna2 = lista_query[7]
     chave2 = lista_query[-1]
     for item in tabelas:
-        # print(item['nome_tabela'])
-        # print(nome_tabela)
         if item['nome_tabela'] == nome_tabela:
             if nome_coluna1 in item['coluna_nome']:
                 if nome_coluna2 in item['coluna_nome']:
@@ -78,14 +69,9 @@ def valida_nomes(lista_query, tabelas):
                     i = item['coluna_nome'].index(nome_coluna2)
                     if item['coluna_tipo'][i] == 'int':
                         chave2 = int(chave2)
-                    # print(chave1)
-                    # print(chave2)
                     for dado in item['dados']:
-                        print(dado)
-                        print(item['dados'])
                         if chave2 in dado:
                             return False
-                        # else:
                     print("Registro não encontrado!")
                     return True
                 else:
