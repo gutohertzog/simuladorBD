@@ -1,1 +1,134 @@
-[]
+[
+    {
+        "nome_tabela": "funcionario",
+        "coluna_tipo": [
+            "int",
+            "varchar",
+            "varchar",
+            "int"
+        ],
+        "coluna_nome": [
+            "id",
+            "nome",
+            "sobrenome",
+            "salario"
+        ],
+        "dados": [
+            [
+                1,
+                "Augusto",
+                "Hertzog",
+                5000
+            ],
+            [
+                2,
+                "Maria",
+                "Clara",
+                100
+            ],
+            [
+                3,
+                "Joao",
+                "Pedro",
+                10000
+            ],
+            [
+                4,
+                "Doroteia",
+                "Joaquina",
+                0
+            ],
+            [
+                5,
+                "Faustao",
+                "Fausto",
+                0
+            ],
+            [
+                6,
+                "Bruce",
+                "Wayne",
+                600
+            ],
+            [
+                7,
+                "Clark",
+                "Kent",
+                15000
+            ]
+        ]
+    },
+    {
+        "nome_tabela": "animais",
+        "coluna_tipo": [
+            "int",
+            "varchar",
+            "int"
+        ],
+        "coluna_nome": [
+            "id",
+            "nome",
+            "idade"
+        ],
+        "dados": [
+            [
+                1,
+                "Chu",
+                5
+            ],
+            [
+                2,
+                "Mozo",
+                4
+            ],
+            [
+                3,
+                "Bud",
+                1
+            ],
+            [
+                4,
+                "Miranda",
+                1
+            ],
+            [
+                5,
+                "Lulu",
+                9
+            ]
+        ]
+    },
+    {
+        "nome_tabela": "series",
+        "coluna_tipo": [
+            "varchar",
+            "int"
+        ],
+        "coluna_nome": [
+            "nome",
+            "temporadas"
+        ],
+        "dados": [
+            [
+                "Batman",
+                4
+            ],
+            [
+                "Friends",
+                6
+            ],
+            [
+                "Superman",
+                0
+            ],
+            [
+                "Supernatural",
+                12
+            ],
+            [
+                "WalkingDead",
+                8
+            ]
+        ]
+    }
+]
