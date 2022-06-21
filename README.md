@@ -1,7 +1,8 @@
 # simuladorBD
-Um simulador de Bando de Dados.
+Um simples simulador de Bando de Dados Oracle.
 
-Eu criei este projeto ao mesmo tempo que aprendia a linguagem Python, então por favor não me julguem tão duramente.
+Este projeto foi desenvolvido ao mesmo tempo em que aprendia a programar em Python.
+
 Ele foi criado como o trabalho final da disciplina de Banco de Dados II do IFRS/POA.
 
 Definição do trabalho - Recuperação de Falhas
